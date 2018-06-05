@@ -31,7 +31,7 @@ export default {
 <style scoped>
   .header {
     width: 100%;
-    padding: 80px 50px 40px;
+    padding: 50px 25% 40px;
     background-color: white;
     display: flex;
     justify-content: space-between;

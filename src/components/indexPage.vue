@@ -9,9 +9,10 @@
           <p>This is the story of Avana, a minimal Bootstrap template for creative agency.</p>
         </article>
       </div>
+      <div v-for="left in leftList"></div>
     </div>
     <div class="right-fall">
-
+      <div v-for="right in rightList"></div>
     </div>
   </div>
 </template>
@@ -21,11 +22,6 @@ export default {
   name: "indexPage",
   data() {
     return {
-      articleList: [{
-        name: 'article1',
-        url: 'article/normal/1',
-        backPic: '/public/imgs/asdf.png'
-      }],
       leftList: [],
       rightList: []
     };
@@ -56,7 +52,7 @@ export default {
     width: 48%;
   }
   .fall-block {
-    box-shadow: 0px 1px 3px rgb(124, 124, 124);
+    box-shadow: 0px 3px 4px rgb(124, 124, 124);
   }
   .title-content {
     padding-left: 41px;

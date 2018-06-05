@@ -1,5 +1,5 @@
 <template>
-  <div @scroll="scrollTop">
+  <div @click="scrollTop">
     <Header/>
     <SideBar/>
     <router-view/>
@@ -24,9 +24,7 @@ export default {
   },
   methods: {
     scrollTop: function(){
-      if(document.documentElement.scrollTop >= window.innerHeight){
-        console.log(1)
-      }
+      console.log(this.$store)
     }
   }
 }
