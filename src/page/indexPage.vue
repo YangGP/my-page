@@ -9,10 +9,14 @@
           <p>This is the story of Avana, a minimal Bootstrap template for creative agency.</p>
         </article>
       </div>
-      <div v-for="left in leftList"></div>
+      <div v-for="left in leftList" class="fall-block">
+        <img :src="left.backPic" alt="">
+      </div>
     </div>
     <div class="right-fall">
-      <div v-for="right in rightList"></div>
+      <div v-for="right in rightList" class="fall-block">
+        <img :src="right.backPic" alt="">
+      </div>
     </div>
   </div>
 </template>
@@ -22,14 +26,23 @@ export default {
   name: "indexPage",
   data() {
     return {
+      which: 'right',
       leftList: [],
       rightList: []
     };
   },
-  methods: {
-    pushIntoFall: function(){
-
-    }
+  mounted() {
+    console.log(this.$store)
+    let list = this.$store.state.indexStore.articles;
+    list.map(val => {
+      if(this.which == 'right'){
+        this.rightList.push(val);
+        this.which = 'left';
+      }else{
+        this.leftList.push(val);
+        this.which = 'right';
+      }
+    })
   }
 };
 </script>
